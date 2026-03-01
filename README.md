@@ -1,4 +1,8 @@
-# PROJETO APLICADO IV — 2026.01  
+<p align="center">
+  <img src="Assets_Figures/logo-mackenzie.png" width="200"/>
+</p>
+
+# PROJETO APLICADO IV — Ciência de Dados EaD - 2026.01  
 ## Indústria 4.0 Predictive: Modelagem de Séries Temporais para Otimização de Infraestrutura e Produção Sustentável
 
 **Componente Curricular:** Projeto Aplicado IV  
