@@ -15,9 +15,11 @@ Indústria 4.0 Predictive: Modelagem de Séries Temporais para Otimização de I
 
 ---
 
-<p align="center">
+<div align="right" style="width:33%; margin-left:auto;">
+
 Projeto elaborado para a disciplina Projeto Aplicado IV, do curso de Ciência de Dados da Universidade Presbiteriana Mackenzie, na categoria Projeto Extensionista, como requisito parcial para aprovação.
-</p>
+
+</div>
 
 ---
 
