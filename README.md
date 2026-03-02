@@ -1,18 +1,41 @@
 <p align="center">
-  <img src="Assets_Figures/logo-mackenzie.png" width="200"/>
+  <img src="Assets_Figures/logo-mackenzie.png" width="180"/>
 </p>
 
-# PROJETO APLICADO IV — Ciência de Dados EaD - 2026.01  
-## Indústria 4.0 Predictive: Modelagem de Séries Temporais para Otimização de Infraestrutura e Produção Sustentável
+<h1 align="center">UNIVERSIDADE PRESBITERIANA MACKENZIE</h1>
 
-**Componente Curricular:** Projeto Aplicado IV  
-**Grupo 7:**  
-- Amarildo Maciel Junior — 10441652  
-- Mariana Mayume Caniza — 10290174  
-- Stella Amaral de Campos — 10441310  
+<h2 align="center">PROJETO APLICADO IV — Ciência de Dados EaD</h2>
+<h3 align="center">2026.01</h3>
 
-**Local:** São Paulo  
-**Ano:** 2026  
+---
+
+<h2 align="center">
+Indústria 4.0 Predictive: Modelagem de Séries Temporais para Otimização de Infraestrutura e Produção Sustentável
+</h2>
+
+---
+
+<p align="center">
+Projeto elaborado para a disciplina Projeto Aplicado IV, do curso de Ciência de Dados da Universidade Presbiteriana Mackenzie, na categoria Projeto Extensionista, como requisito parcial para aprovação.
+</p>
+
+---
+
+<p align="center">
+<strong>Grupo 7</strong><br>
+Amarildo Maciel Junior — 10441652<br>
+Mariana Mayume Caniza — 10290174<br>
+Stella Amaral de Campos — 10441310
+</p>
+
+---
+
+<p align="center">
+São Paulo,<br>
+2026
+</p>
+
+---
 
 ---
 
