@@ -43,7 +43,7 @@ São Paulo,<br>
 <br>
 # 📑 Sumário
 
-- [Introdução](#introdução)
+- [1. Introdução](#introdução)
   - [Problema](#problema)
 - [Motivação e Justificativa](#motivação-e-justificativa)
   - [ODS 9 – Indústria, Inovação e Infraestrutura](#ods-9--indústria-inovação-e-infraestrutura)
@@ -64,9 +64,9 @@ São Paulo,<br>
 
 # Introdução
 
-O presente projeto desenvolve-se no contexto da Ciência de Dados aplicada à Economia Industrial. De acordo com Fernandes (2026), uma série temporal é um conjunto de observações ordenadas no tempo e coletadas em intervalos regulares.
+O presente projeto desenvolve-se no contexto da Ciência de Dados aplicada à Economia Industrial. Conforme define Fernandes (2026), uma série temporal caracteriza-se como um conjunto de observações ordenadas no tempo, coletadas em intervalos regulares, permitindo a análise de fenômenos que evoluem cronologicamente. Tais séries são fundamentais em diversas áreas, como a Economia, pois possibilitam não apenas descrever o comportamento de uma variável, mas também prever valores futuros e auxiliar no controle de processos.
+Neste trabalho, o foco recai sobre o Índice de Produção Física Industrial (PIM-PF), um indicador vital para medir o dinamismo econômico de um país. A análise de séries temporais permite identificar elementos característicos como a tendência (que indica a propensão de crescimento ou declínio a longo prazo) e a sazonalidade, que revela padrões de variação que se repetem em intervalos fixos. O problema central reside na volatilidade da produção industrial brasileira, que impõe desafios severos aos gestores de infraestrutura. Sem uma análise preditiva robusta, o setor enfrenta riscos de subutilização de recursos ou gargalos logísticos, gerando incertezas que dificultam a construção de uma infraestrutura resiliente.
 
-Neste trabalho, o foco recai sobre o Índice de Produção Física Industrial (PIM-PF), um indicador vital para medir o dinamismo econômico de um país.
 
 ## Problema
 
