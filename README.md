@@ -44,15 +44,12 @@ São Paulo,<br>
 # 📑 Sumário
 
 - [1. Introdução](#introdução)
-  - [Problema](#problema)
-- [Motivação e Justificativa](#motivação-e-justificativa)
-  - [ODS 9 – Indústria, Inovação e Infraestrutura](#ods-9--indústria-inovação-e-infraestrutura)
-  - [ODS 12 – Consumo e Produção Responsáveis](#ods-12--consumo-e-produção-responsáveis)
-  - [Potencial de Aplicabilidade](#potencial-de-aplicabilidade)
-- [Objetivo](#objetivo)
-  - [Objetivo Geral](#objetivo-geral)
-  - [Objetivos Específicos](#objetivos-específicos)
-- [Descrição da Base de Dados](#descrição-da-base-de-dados)
+- [2. Motivação e Justificativa](#motivação-e-justificativa)
+  - [2.1 ODS 9 – Indústria, Inovação e Infraestrutura](#ods-9--indústria-inovação-e-infraestrutura)
+  - [2.2 ODS 12 – Consumo e Produção Responsáveis](#ods-12--consumo-e-produção-responsáveis)
+  - [2.3 Potencial de Aplicabilidade](#potencial-de-aplicabilidade)
+- [3. Objetivo](#objetivo)
+- [4. Metodologia e Base de dados](#descrição-da-base-de-dados)
   - [Fonte dos Dados](#fonte-dos-dados)
   - [Informações Disponíveis](#informações-disponíveis)
   - [Estrutura e Organização](#estrutura-e-organização)
@@ -62,58 +59,46 @@ São Paulo,<br>
 
 ---
 
-# Introdução
+# 1. INTRODUÇÃO
 
 O presente projeto desenvolve-se no contexto da Ciência de Dados aplicada à Economia Industrial. Conforme define Fernandes (2026), uma série temporal caracteriza-se como um conjunto de observações ordenadas no tempo, coletadas em intervalos regulares, permitindo a análise de fenômenos que evoluem cronologicamente. Tais séries são fundamentais em diversas áreas, como a Economia, pois possibilitam não apenas descrever o comportamento de uma variável, mas também prever valores futuros e auxiliar no controle de processos.
 Neste trabalho, o foco recai sobre o Índice de Produção Física Industrial (PIM-PF), um indicador vital para medir o dinamismo econômico de um país. A análise de séries temporais permite identificar elementos característicos como a tendência (que indica a propensão de crescimento ou declínio a longo prazo) e a sazonalidade, que revela padrões de variação que se repetem em intervalos fixos. O problema central reside na volatilidade da produção industrial brasileira, que impõe desafios severos aos gestores de infraestrutura. Sem uma análise preditiva robusta, o setor enfrenta riscos de subutilização de recursos ou gargalos logísticos, gerando incertezas que dificultam a construção de uma infraestrutura resiliente.
 
 
-## Problema
-
-A volatilidade da produção industrial brasileira apresenta um desafio para os gestores de infraestrutura e produção. Sem uma análise preditiva, a indústria enfrenta o risco de subutilização de recursos ou gargalos logísticos.
-
-O problema selecionado é a incerteza no planejamento produtivo, que muitas vezes leva ao desperdício de insumos e energia, dificultando a construção de uma infraestrutura resiliente e sustentável.
-
 ---
 
-# Motivação e Justificativa
+# 2. MOTIVAÇÃO E JUSTIFICATIVA
 
-A relevância deste tema fundamenta-se nos Objetivos de Desenvolvimento Sustentável (ODS) da Organização das Nações Unidas (ONU).
+A motivação para este estudo surge da identificação de uma lacuna crítica no planejamento industrial brasileiro: a dificuldade em antecipar flutuações sazonais e ciclos econômicos que impactam diretamente a cadeia de suprimentos. Frequentemente, a falta de ferramentas analíticas acessíveis para a previsão de demanda resulta em uma produção descalibrada, onde o "ruído" ou erro aleatório da série é confundido com mudanças estruturais, levando a decisões equivocadas de investimento. Esta oportunidade de melhoria no planejamento logístico é o que impulsiona a proposição de um produto analítico focado em previsibilidade.
+A justificativa do projeto apresenta contribuições em duas frentes principais. Do ponto de vista técnico, a aplicação de modelos de decomposição clássica e projeção estatística oferece uma base científica para a tomada de decisão, transformando dados brutos em inteligência estratégica. Socialmente, o projeto alinha-se aos Objetivos de Desenvolvimento Sustentável (ODS) da ONU.
 
-## ODS 9 – Indústria, Inovação e Infraestrutura
+
+## 2.1 ODS 9 – Indústria, Inovação e Infraestrutura
 
 A capacidade de prever a produção permite que a infraestrutura logística e energética do país seja planejada com maior precisão, evitando colapsos em períodos de alta demanda.
 
-## ODS 12 – Consumo e Produção Responsáveis
+## 2.2 ODS 12 – Consumo e Produção Responsáveis
 
 Ao identificar padrões sazonais, as indústrias podem ajustar seu estoque e produção, reduzindo desperdícios de matéria-prima e promovendo uma produção mais consciente.
 
-## Potencial de Aplicabilidade
+## 2.3 Potencial de Aplicabilidade
 
-A solução proposta consiste em um produto analítico baseado em modelos estatísticos de séries temporais, que funcionará como uma ferramenta de auxílio à tomada de decisão para associações industriais e gestores governamentais.
-
-Essa solução permitirá antecipar flutuações de mercado e otimizar a alocação de recursos financeiros e humanos.
+A solução proposta consiste em um produto analítico baseado em modelos estatísticos de séries temporais que funcionará como uma ferramenta de auxílio à tomada de decisão para associações industriais e gestores governamentais, permitindo antecipar flutuações de mercado e otimizar a alocação de recursos financeiros e humanos.
 
 ---
 
-# Objetivo
+# 3. OBJETIVO
 
-## Objetivo Geral
+O objetivo deste projeto é desenvolver um produto analítico baseado em um modelo preditivo univariado para o índice de produção industrial brasileira, visando otimizar a gestão de recursos e infraestrutura. Para isso, o grupo realizará a decomposição clássica da série para isolar seus componentes de tendência, sazonalidade e ruído, classificando-a quanto à sua estacionaridade e linearidade conforme os preceitos estatísticos de Morettin e Toloi (2018). Ao final, o projeto busca projetar valores futuros que sirvam de subsídio para o planejamento estratégico do cliente, focando na mitigação de custos operacionais e na redução de desperdícios produtivos.
 
-Desenvolver um modelo preditivo univariado para o índice de produção industrial brasileira.
-
-## Objetivos Específicos
-
-- Realizar a decomposição clássica da série temporal para isolar tendência, sazonalidade e ruído.
-- Classificar a série quanto à sua estacionariedade e linearidade.
-- Projetar valores futuros que sirvam de subsídio para o planejamento estratégico do cliente.
-- Contribuir para a redução de custos operacionais e desperdícios.
 
 ---
 
-# Descrição da Base de Dados
+# 4. METODOLOGIA E BASE DE DADOS
 
-O projeto utilizará dados secundários oficiais obtidos via plataforma SIDRA do Instituto Brasileiro de Geografia e Estatística.
+A base de dados utilizada provém da plataforma SIDRA, mantida pelo Instituto Brasileiro de Geografia e Estatística (IBGE), especificamente da Tabela 8159, que detalha a Pesquisa Industrial Mensal - Produção Física (PIM-PF). Os dados consistem em um número-índice da produção física industrial, utilizando uma base fixa mensal sem ajuste sazonal, o que é imprescindível para que o grupo possa realizar a identificação manual de padrões repetitivos ao longo do tempo.
+Estruturalmente, a base é uma série univariada organizada de forma cronológica mensal, abrangendo o período de janeiro de 2006 a dezembro de 2022. Um detalhe técnico importante é que a base possui atributos de setorização baseados na Classificação Nacional de Atividades Econômicas (CNAE 2.0), permitindo a extração de dados da "Indústria Geral" ou de segmentos específicos. A coleta desses dados é realizada de forma administrativa e censitária pelo IBGE diretamente junto às unidades produtivas, garantindo um alto grau de confiabilidade e precisão para a modelagem estatística proposta.
+
 
 ## Fonte dos Dados
 
