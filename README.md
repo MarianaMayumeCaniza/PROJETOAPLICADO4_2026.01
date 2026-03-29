@@ -50,11 +50,10 @@ São Paulo,<br>
   - [2.3 Potencial de Aplicabilidade](#potencial-de-aplicabilidade)
 - [3. Objetivo](#objetivo)
 - [4. Metodologia e Base de dados](#descrição-da-base-de-dados)
-  - [Fonte dos Dados](#fonte-dos-dados)
-  - [Informações Disponíveis](#informações-disponíveis)
-  - [Estrutura e Organização](#estrutura-e-organização)
-  - [Período de Coleta](#período-de-coleta)
-  - [Forma de Coleta](#forma-de-coleta)
+  - [4.1 Fonte dos Dados](#fonte-dos-dados)
+  - [4.2 Informações Disponíveis](#informações-disponíveis)
+  - [4.3 Ferramentas e Ambiente de Desenvolvimento](#estrutura-e-organização)
+  - [4.4 EDA](#período-de-coleta)
 - [Referências](#referências)
 
 ---
@@ -96,29 +95,28 @@ O objetivo deste projeto é desenvolver um produto analítico baseado em um mode
 
 # 4. METODOLOGIA E BASE DE DADOS
 
-A base de dados utilizada provém da plataforma SIDRA, mantida pelo Instituto Brasileiro de Geografia e Estatística (IBGE), especificamente da Tabela 8159, que detalha a Pesquisa Industrial Mensal - Produção Física (PIM-PF). Os dados consistem em um número-índice da produção física industrial, utilizando uma base fixa mensal sem ajuste sazonal, o que é imprescindível para que o grupo possa realizar a identificação manual de padrões repetitivos ao longo do tempo.
-Estruturalmente, a base é uma série univariada organizada de forma cronológica mensal, abrangendo o período de janeiro de 2006 a dezembro de 2022. Um detalhe técnico importante é que a base possui atributos de setorização baseados na Classificação Nacional de Atividades Econômicas (CNAE 2.0), permitindo a extração de dados da "Indústria Geral" ou de segmentos específicos. A coleta desses dados é realizada de forma administrativa e censitária pelo IBGE diretamente junto às unidades produtivas, garantindo um alto grau de confiabilidade e precisão para a modelagem estatística proposta.
-
-
-## Fonte dos Dados
+  A base de dados utilizada provém da plataforma Sistema IBGE de Recuperação Automática (SIDRA), mantida pelo Instituto Brasileiro de Geografia e Estatística (IBGE), especificamente da Tabela 8159, que detalha a Pesquisa Industrial Mensal - Produção Física (PIM-PF). 
+  Os dados consistem em um número-índice da produção física industrial, utilizando uma base fixa mensal (2012 = 100) sem ajuste sazonal. Essa característica é imprescindível para que o grupo possa realizar a identificação de padrões repetitivos e a Decomposição Clássica da série em seus componentes de tendência, sazonalidade e ruído.
+  
+## 4.1 Fonte dos Dados
 
 Pesquisa Industrial Mensal – Produção Física (PIM-PF) – Tabela 8159.
 
-## Informações Disponíveis
+## 4.2 Informações Disponíveis
+Abrangência Geográfica: Unidade Federativa Brasil (Total Nacional).
+Periodicidade: Mensal, abrangendo o período de Janeiro de 2006 a Dezembro de 2022 (n=204).
+Atributos: A base utiliza a Classificação Nacional de Atividades Econômicas (CNAE 2.0), permitindo a extração de dados da "Indústria Geral" ou futuras expansões para segmentos específicos.
+Forma de Coleta: Coleta administrativa e censitária realizada mensalmente pelo IBGE junto às unidades produtivas.
 
-Número-índice da produção física industrial (base fixa mensal sem ajuste sazonal).
+## 4.3 Ferramentas e Ambiente de Desenvolvimento
+A manipulação e modelagem dos dados serão realizadas utilizando a linguagem Python 3.x em ambiente Jupyter Notebook. As principais bibliotecas aplicadas são:
+Pandas e Numpy: Para estruturação da série e tratamento de dados.
+Matplotlib e Seaborn: Para a Análise Exploratória de Dados (EDA) e visualização gráfica.
+Statsmodels: Para a realização da Decomposição Sazonal, Testes de Estacionariedade (ADF) e futura implementação de modelos ARIMA/SARIMA.
 
-## Estrutura e Organização
+## 4.4 EDA
+O processo de investigação analítica segue o seguinte fluxo de trabalho:Pré-processamento: Conversão dos dados do formato Wide para Long e tratamento da tipagem temporal (datetime).Análise de Estacionariedade: Aplicação do teste de raiz unitária (Augmented Dickey-Fuller) para verificar se a série exige diferenciação.Decomposição Sazonal: Separação estatística da Tendência ($T_t$) e Sazonalidade ($S_t$), validando a escolha da periodicidade mensal para capturar os ciclos produtivos anuais.Levantamento de Técnicas: Definição de modelos de suavização exponencial (Holt-Winters) e modelos autorregressivos para a fase de predição.
 
-Trata-se de uma série univariada, organizada de forma cronológica mensal.
-
-## Período de Coleta
-
-Janeiro de 2006 a dezembro de 2022 (série encerrada conforme atualização do IBGE para a nova base de 2012).
-
-## Forma de Coleta
-
-Coleta administrativa e censitária realizada mensalmente pelo IBGE junto a unidades produtivas.
 
 ---
 
