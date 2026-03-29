@@ -43,8 +43,8 @@ São Paulo,<br>
 <br>
 # 📑 Sumário
 
-- [1. Introdução](#introdução)
-- [2. Motivação e Justificativa](#motivação-e-justificativa)
+- [1. Introdução](#INTRODUÇÃO)
+- [2. Motivação e Justificativa](#MOTIVAÇÃO_E_JUSTIFICATIVA)
   - [2.1 ODS 9 – Indústria, Inovação e Infraestrutura](#ods-9--indústria-inovação-e-infraestrutura)
   - [2.2 ODS 12 – Consumo e Produção Responsáveis](#ods-12--consumo-e-produção-responsáveis)
   - [2.3 Potencial de Aplicabilidade](#potencial-de-aplicabilidade)
