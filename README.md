@@ -109,6 +109,10 @@ Atributos: A base utiliza a Classificação Nacional de Atividades Econômicas (
 Forma de Coleta: Coleta administrativa e censitária realizada mensalmente pelo IBGE junto às unidades produtivas.
 
 ## 4.3 Ferramentas e Ambiente de Desenvolvimento
+A manipulação e modelagem dos dados serão realizadas utilizando a linguagem Python 3.x em ambiente Jupyter Notebook. As principais bibliotecas aplicadas são:
+Pandas e Numpy: Para estruturação da série e tratamento de dados.
+Matplotlib e Seaborn: Para a Análise Exploratória de Dados (EDA) e visualização gráfica.
+Statsmodels: Para a realização da Decomposição Sazonal, Testes de Estacionariedade (ADF) e futura implementação de modelos ARIMA/SARIMA.
 ### 4.3.1 Procedimento de Coleta e Reprodutibilidade
 A estratégia de coleta de dados deste projeto foi estruturada de forma híbrida para garantir tanto a segurança quanto a reprodutibilidade técnica:
 1.  **Armazenamento Local (Backup):** Os dados brutos foram extraídos manualmente do portal SIDRA/IBGE (Tabela 8159): [https://sidra.ibge.gov.br/tabela/8159](https://sidra.ibge.gov.br/tabela/8159)  e armazenados no diretório local `BaseDeDados`. Esse procedimento serve como uma backup para a integridade dos dados originais.
@@ -136,12 +140,31 @@ Para realizar uma análise profunda que parte do panorama nacional para as espec
 
 Esta estrutura modular permite verificar se padrões identificados no nível nacional se mantêm ou se alteram em contextos regionais e setoriais específicos.
 
-A manipulação e modelagem dos dados serão realizadas utilizando a linguagem Python 3.x em ambiente Jupyter Notebook. As principais bibliotecas aplicadas são:
-Pandas e Numpy: Para estruturação da série e tratamento de dados.
-Matplotlib e Seaborn: Para a Análise Exploratória de Dados (EDA) e visualização gráfica.
-Statsmodels: Para a realização da Decomposição Sazonal, Testes de Estacionariedade (ADF) e futura implementação de modelos ARIMA/SARIMA.
+
 
 ## 4.4 Pré-processamento
+
+### 4.4.1 Transformar em Data
+Conversão de Formato: A coluna de meses foi convertida para o formato datetime, estabelecendo a cronologia correta da série. 
+
+Frequência Mensal (asfreq): Utilizou-se a função asfreq('MS') para garantir a continuidade temporal. Este passo "carimba" o calendário, assegurando que não existam saltos entre os meses, o que é um pré-requisito para o funcionamento de modelos como o SARIMA.
+
+### 4.4.2 Integridade de Dados: Faltantes e Duplicadas
+
+Interpolação Linear: Caso o asfreq identifique meses ausentes (vazios), aplica-se a função interpolate(). Em vez de usar zero — o que distorceria as médias — a interpolação faz a media em meio termo entre meses vizinhos para preencher o ponto , mantendo a suavidade da série.
+
+Tratamento de Duplicadas: Foi realizada uma "batida policial" no índice para detectar datas repetidas. Por segurança, caso existam duplicatas, mantém-se o primeiro registro (keep='first') para garantir que cada mês seja único na linha do tempo. 
+(isso pode ser melhorado... pq o primeiro dado pode ser um outlier e o segundo se encaixar melhor, mas para esse caso vamos manter assim, a base esta bem sobria)
+
+### 4.4.3 Saneamento e Outliers
+Detecção de anormalidades (Z-Score): Utilizou-se a lógica de Z-Score móvel (com janela de 12 meses) para identificar saltos absurdos ($|Z| > 3$)Z-Score móvel (com janela de 12 meses) para identificar saltos absurdos ($|Z| > 3$)
+
+### 4.4.4 Padronização
+Diferente de séries de volume bruto, a PIM-PF utiliza o Número-índice de base fixa (2012=100). Esta é uma forma de padronização realizada pelo próprio IBGE que permite a comparação direta entre diferentes segmentos industriais e regiões, utilizando a média de 2012 como ponto de equilíbrio (100).
+
+Adicionalmente, para fins de modelagem estatística, os dados foram submetidos a transformações de logaritmo e diferenciação, visando estabilizar a variância e garantir a estacionariedade da série, conforme exigido pelos modelos de classe SARIMA.Diferente de séries de volume bruto, a PIM-PF utiliza o Número-índice de base fixa (2012=100). Esta é uma forma de padronização realizada pelo próprio IBGE que permite a comparação direta entre diferentes segmentos industriais e regiões, utilizando a média de 2012 como ponto de equilíbrio (100).
+
+Adicionalmente, para fins de modelagem estatística, os dados foram submetidos a transformações de logaritmo e diferenciação, visando estabilizar a variância e garantir a estacionariedade da série, conforme exigido pelos modelos de classe SARIMA.
 
 ## 4.5 EDA
 O processo de investigação analítica segue o seguinte fluxo de trabalho:Pré-processamento: Conversão dos dados do formato Wide para Long e tratamento da tipagem temporal (datetime).Análise de Estacionariedade: Aplicação do teste de raiz unitária (Augmented Dickey-Fuller) para verificar se a série exige diferenciação.Decomposição Sazonal: Separação estatística da Tendência ($T_t$) e Sazonalidade ($S_t$), validando a escolha da periodicidade mensal para capturar os ciclos produtivos anuais.Levantamento de Técnicas: Definição de modelos de suavização exponencial (Holt-Winters) e modelos autorregressivos para a fase de predição.
