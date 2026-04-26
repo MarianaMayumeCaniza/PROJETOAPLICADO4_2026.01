@@ -196,3 +196,29 @@ ORGANIZAÇÃO DAS NAÇÕES UNIDAS.
 Objetivos de Desenvolvimento Sustentável: ODS 9 e ODS 12.  
 Disponível em: https://brasil.un.org/pt-br/sdgs.  
 Acesso em: 28 fev. 2026.
+
+COTTA, Paulo. 
+Introdução ao ARIMA e SARIMA: modelos de séries temporais. Medium, 2023. 
+Disponível em: https://medium.com/@paulovpcotta/introdu%C3%A7%C3%A3o-ao-arima-e-sarima-modelos-de-s%C3%A9ries-temporais-51992ae5abfd. 
+Acesso em: 24 abr. 2026.
+
+DATA SCIENCE ACADEMY. 
+Análise e Modelagem de Séries Temporais: Técnicas Estatísticas, IA e Suas Aplicações. Blog DSA, 2023. 
+Disponível em: https://blog.dsacademy.com.br/analise-e-modelagem-de-series-temporais-tecnicas-estatisticas-ia-e-suas-aplicacoes/. 
+Acesso em: 24 abr. 2026.
+
+DUTT, Rohan. 
+10 Hybrid Forecasting Architectures: Blending Deep Learning with Time Series Models. Medium, 2023. 
+Disponível em: https://medium.com/@Rohan_Dutt/10-hybrid-forecasting-architectures-blending-deep-learning-with-time-series-models-252c685601e1. 
+Acesso em: 24 abr. 2026.
+
+GEEKSFORGEEKS. 
+SARIMA (Seasonal Autoregressive Integrated Moving Average). GeeksforGeeks, 2024. 
+Disponível em: https://www.geeksforgeeks.org/machine-learning/sarima-seasonal-autoregressive-integrated-moving-average/. Acesso em: 25 abr. 2026.
+
+IBGE. PIM-PF - Pesquisa Industrial Mensal - Produção Física: Tabela 8159. Rio de Janeiro: IBGE, 2022. Disponível em: https://sidra.ibge.gov.br/tabela/8159. Acesso em: 25 abr. 2026.
+
+LIU, Yong; LIU, Chen; et al. 
+Koopa: Forecasting Non-stationary Time Series with Disentangled Koopman Dynamics. 
+Medium, 2023. Disponível em: https://medium.com/@kdk199604/koopa-forecasting-non-stationary-time-series-with-disentangled-koopman-dynamics-f3348aa5d4be. 
+Acesso em: 26 abr. 2026.
