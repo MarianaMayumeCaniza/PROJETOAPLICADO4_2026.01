@@ -168,6 +168,11 @@ Adicionalmente, para fins de modelagem estatística, os dados foram submetidos a
 
 ## 4.5 EDA
 O processo de investigação analítica segue o seguinte fluxo de trabalho:Pré-processamento: Conversão dos dados do formato Wide para Long e tratamento da tipagem temporal (datetime).Análise de Estacionariedade: Aplicação do teste de raiz unitária (Augmented Dickey-Fuller) para verificar se a série exige diferenciação.Decomposição Sazonal: Separação estatística da Tendência ($T_t$) e Sazonalidade ($S_t$), validando a escolha da periodicidade mensal para capturar os ciclos produtivos anuais.Levantamento de Técnicas: Definição de modelos de suavização exponencial (Holt-Winters) e modelos autorregressivos para a fase de predição.
+### 4.5.1 Graficos
+### 4.5.2 Decomposição STL
+### 4.5.1 EVM e EVA
+
+
 
 
 ---
