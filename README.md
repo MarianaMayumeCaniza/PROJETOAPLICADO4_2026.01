@@ -109,6 +109,23 @@ Atributos: A base utiliza a Classificação Nacional de Atividades Econômicas (
 Forma de Coleta: Coleta administrativa e censitária realizada mensalmente pelo IBGE junto às unidades produtivas.
 
 ## 4.3 Ferramentas e Ambiente de Desenvolvimento
+### 4.3.1 Procedimento de Coleta e Reprodutibilidade
+A estratégia de coleta de dados deste projeto foi estruturada de forma híbrida para garantir tanto a segurança quanto a reprodutibilidade técnica:
+1.  **Armazenamento Local (Backup):** Os dados brutos foram extraídos manualmente do portal SIDRA/IBGE (Tabela 8159): [https://sidra.ibge.gov.br/tabela/8159](https://sidra.ibge.gov.br/tabela/8159)  e armazenados no diretório local `BaseDeDados`. Esse procedimento serve como uma backup para a integridade dos dados originais.
+2. **Automação via API:** Para o processamento e análise no ambiente Python, foi utilizada a **API (Application Programming Interface)** do sistema SIDRA. Diferente da coleta manual, o uso de requisições diretas ao *endpoint* do IBGE permite que a série seja extraída com a mesma configuração de filtros de forma automática. A URL de requisição [`(https://apisidra.ibge.gov.br/values/t/8159/n[NIVEL]/[TERRITORIO]/v/[VARIAVEL]/p/[PERIODO]/c544/[SETOR]/d/v[VARIAVEL]%205)`] é composta por parâmetros técnicos que definem os filtros da análise, exemplo:
+
+[https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11599/p/all/c544/129314/d/v11599%205]
+| Parâmetro | Código | Descrição Técnica |
+| :--- | :--- | :--- |
+| **Tabela** | `/t/8159` | Identificador da Pesquisa Industrial Mensal (PIM-PF) |
+| **Variável** | `/v/11599` | Seleção do "Índice de base fixa (2012=100)"|
+| **Classificação** | `/c544/129314` | Filtro para o segmento de "Indústria Geral" |
+| **Período** | `/p/all` |Extração da série histórica completa disponível |
+| **Nível Territorial** | `/n1/all` | Filtro para o total nacional (Brasil) |
+
+
+
+
 A manipulação e modelagem dos dados serão realizadas utilizando a linguagem Python 3.x em ambiente Jupyter Notebook. As principais bibliotecas aplicadas são:
 Pandas e Numpy: Para estruturação da série e tratamento de dados.
 Matplotlib e Seaborn: Para a Análise Exploratória de Dados (EDA) e visualização gráfica.
