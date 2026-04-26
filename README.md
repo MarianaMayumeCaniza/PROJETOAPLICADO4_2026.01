@@ -123,8 +123,18 @@ A estratégia de coleta de dados deste projeto foi estruturada de forma híbrida
 | **Período** | `/p/all` |Extração da série histórica completa disponível |
 | **Nível Territorial** | `/n1/all` | Filtro para o total nacional (Brasil) |
 
+### 4.3.2 Dimensões de Análise e Níveis de Detalhamento
+Para realizar uma análise profunda que parte do panorama nacional para as especificidades setoriais e regionais, foram definidos recortes principais de estudo (subamostras):
+| Dimensão de Análise | Objetivo Técnico | Período | Abrangência | Variável Principal |
+| :--- | :--- | :--- | :--- | :--- |
+| **Panorama Geral (Macro)** | Identificar tendência e sazonalidade de longo prazo| 2002 – 2022 | Brasil | Número-índice |
+| **Dinâmica de Momentum (EVM)** | Analisar a volatilidade e choques de curto prazo mês a mês| 2002 – 2022 | Brasil | Variação Mensal |
+| **Ciclo Econômico (AVA)** | Observar o crescimento real acumulado, removendo o "ruído" mensal | 2002 – 2022 | Brasil | Acumulada no Ano |
+| **Recorte Regional** | Comparar o desempenho da produção em polos específicos (ex: Sudeste) | 2022 | Sudeste | Número-índice |
+| **Recorte Setorial** | Avaliar como nichos específicos reagem a crises (ex: Bebidas) | 2002 – 2022 | Bebidas | Número-índice |
+| **Janela de Eventos (Zoom)** | Investigar comportamentos atípicos em períodos de alta volatilidade | Jul – Dez/2022 | Brasil | EVM |
 
-
+Esta estrutura modular permite verificar se padrões identificados no nível nacional se mantêm ou se alteram em contextos regionais e setoriais específicos.
 
 A manipulação e modelagem dos dados serão realizadas utilizando a linguagem Python 3.x em ambiente Jupyter Notebook. As principais bibliotecas aplicadas são:
 Pandas e Numpy: Para estruturação da série e tratamento de dados.
