@@ -54,6 +54,8 @@ São Paulo,<br>
   - [4.2 Informações Disponíveis](#informações-disponíveis)
   - [4.3 Ferramentas e Ambiente de Desenvolvimento](#estrutura-e-organização)
   - [4.4 EDA](#período-de-coleta)
+- [5. Resultados e Discussão](# 5. RESULTADOS E DISCUSSÃO)
+-# 6. VIDEO EXPLICATIVO 
 - [Referências](#referências)
 
 ---
@@ -241,9 +243,11 @@ O processo de investigação analítica segue o seguinte fluxo de trabalho:Pré-
 ### 4.5.2 Decomposição STL
 ### 4.5.1 EVM e EVA
 
+# 5. RESULTADOS E DISCUSSÃO
 
 
-
+# 6. VIDEO EXPLICATIVO
+https://youtu.be/hJdMZtAbCmw
 ---
 
 # Referências
