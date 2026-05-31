@@ -110,9 +110,10 @@ Forma de Coleta: Coleta administrativa e censitária realizada mensalmente pelo 
 
 ## 4.3 Ferramentas e Ambiente de Desenvolvimento
 A manipulação e modelagem dos dados serão realizadas utilizando a linguagem Python 3.x em ambiente Jupyter Notebook. As principais bibliotecas aplicadas são:
-Pandas e Numpy: Para estruturação da série e tratamento de dados.
-Matplotlib e Seaborn: Para a Análise Exploratória de Dados (EDA) e visualização gráfica.
-Statsmodels: Para a realização da Decomposição Sazonal, Testes de Estacionariedade (ADF) e futura implementação de modelos ARIMA/SARIMA.
+
+**Pandas e Numpy**: Para estruturação da série e tratamento de dados.
+**Matplotlib e Seaborn**: Para a Análise Exploratória de Dados (EDA) e visualização gráfica.
+**Statsmodels:** Para a realização da Decomposição Sazonal, Testes de Estacionariedade (ADF) e futura implementação de modelos ARIMA/SARIMA.
 
 ### 4.3.1 Procedimento de Coleta e Reprodutibilidade
 A estratégia de coleta de dados deste projeto foi estruturada de forma híbrida para garantir tanto a segurança quanto a reprodutibilidade técnica:
@@ -145,24 +146,24 @@ Esta estrutura modular permite verificar se padrões identificados no nível nac
 Os dados brutos utilizados no projeto foram organizados para garantir a reprodutibilidade. Os arquivos estão estruturados no diretório BaseDeDados em formato .xlsx e .csv, contendo as séries históricas da PIM-PF (2002-2022).
 
 Para a automação da coleta de dados, foram utilizadas chamadas à API oficial do SIDRA/IBGE. Abaixo, detalhamos os endpoints utilizados para cada dimensão de análise:
-1. Industria geral Bruta
+**1. Industria geral Bruta**
 Arquivo: PIMPF_IndustriaGeral_2002_2022_Brasil.xlsx
 Variavel: /v/11599 PIMPF - Número-índice (2012=100) (Número-índice): 5 de 5 casas decimais
 Panorama Geral (Indústria Geral):
 api_url = "[https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11599/p/all/c544/129314/d/v11599%201](https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11599/p/all/c544/129314/d/v11599%201)"
 
-2. EVM Industria geral Bruta
+**2. EVM Industria geral Bruta**
 Arquivo: PIMPF_IndustriaGeral_EVM_2002_2022_Brasil.xlsx
 Variavel: /v/11601 PIMPF - Variação mês/mês imediatamente anterior, com ajuste sazonal (M/M-1) (%): 1 de 1 casas decimais
 Dinâmica de Momentum (EVM - Variação Mensal):
 api_url = "[https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11601/p/all/c544/129314/d/v11601%201](https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11601/p/all/c544/129314/d/v11601%201)"
 
-3. EVA Industria geral Bruta:
+**3. EVA Industria geral Bruta**
 Arquivo: PIMPF_IndustriaGeral_EVA_2002_2022_Brasil.xlsx
 Variavel: /v/11602 Variação mês/mesmo mês do ano anterior (M/M-12) (% [janeiro 2003 a dezembro 2022]): 1 de 1 casas decimais
 api_url = "[https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11602/p/all/c544/129314/d/v11602%201](https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11602/p/all/c544/129314/d/v11602%201)"
 
-4. Recorte Regional e Estadual
+**4. Recorte Regional e Estadual**
 
 Região Sudeste: n2
 Arquivo: PIMPF_IndustriaGeral_GrandeRegiao_2002_2022.xlsx
@@ -176,7 +177,7 @@ Nível Territorial: `n3/all`
 Variavel: /v/11599 PIMPF - Número-índice (2012=100) (Número-índice): 5 de 5 casas decimais
 api_url = "[https://apisidra.ibge.gov.br/values/t/8159/n3/35/v/11599/p/all/c544/129314/d/v11599%201](https://apisidra.ibge.gov.br/values/t/8159/n3/all/v/11599/p/all/c544/129314/d/v11599%205)"
 
-5. Recorte Setorial
+**5. Recorte Setorial**
 
 Fabricação de Produtos Alimentícios (3.10): Código 129317
 Arquivo: PIMPF_IndustriaGeral_2002_2022_Brasil_Alimenticia.xlsx
@@ -190,7 +191,7 @@ Classificação: /c544/129333
 Variavel: /v/11599 PIMPF - Número-índice (2012=100) (Número-índice): 5 de 5 casas decimais
 api_url = ["https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11599/p/all/c544/129333/d/v11599%201"](https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11599/p/all/c544/129337/d/v11599%205)
 
-6. Janela de Eventos (Zoom)
+**6. Janela de Eventos (Zoom)**
 
 Crise 2008 (Ex: 2007 a 2009): /p/200601-201012
 Arquivo: PIMPF_IndustriaGeral_2007_2009_Brasil.xlsx
