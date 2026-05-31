@@ -148,6 +148,7 @@ Esta estrutura modular permite verificar se padrões identificados no nível nac
 Os dados brutos utilizados no projeto foram organizados para garantir a reprodutibilidade. Os arquivos estão estruturados no diretório BaseDeDados em formato .xlsx e .csv, contendo as séries históricas da PIM-PF (2002-2022).
 
 Para a automação da coleta de dados, foram utilizadas chamadas à API oficial do SIDRA/IBGE. Abaixo, detalhamos os endpoints utilizados para cada dimensão de análise:
+
 **1. Industria geral Bruta**
 Arquivo: PIMPF_IndustriaGeral_2002_2022_Brasil.xlsx
 Variavel: /v/11599 PIMPF - Número-índice (2012=100) (Número-índice): 5 de 5 casas decimais
