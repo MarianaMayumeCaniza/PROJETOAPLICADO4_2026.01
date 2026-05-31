@@ -112,7 +112,9 @@ Forma de Coleta: Coleta administrativa e censitária realizada mensalmente pelo 
 A manipulação e modelagem dos dados serão realizadas utilizando a linguagem Python 3.x em ambiente Jupyter Notebook. As principais bibliotecas aplicadas são:
 
 **Pandas e Numpy**: Para estruturação da série e tratamento de dados.
+
 **Matplotlib e Seaborn**: Para a Análise Exploratória de Dados (EDA) e visualização gráfica.
+
 **Statsmodels:** Para a realização da Decomposição Sazonal, Testes de Estacionariedade (ADF) e futura implementação de modelos ARIMA/SARIMA.
 
 ### 4.3.1 Procedimento de Coleta e Reprodutibilidade
