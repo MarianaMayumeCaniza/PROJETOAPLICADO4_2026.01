@@ -113,6 +113,7 @@ A manipulação e modelagem dos dados serão realizadas utilizando a linguagem P
 Pandas e Numpy: Para estruturação da série e tratamento de dados.
 Matplotlib e Seaborn: Para a Análise Exploratória de Dados (EDA) e visualização gráfica.
 Statsmodels: Para a realização da Decomposição Sazonal, Testes de Estacionariedade (ADF) e futura implementação de modelos ARIMA/SARIMA.
+
 ### 4.3.1 Procedimento de Coleta e Reprodutibilidade
 A estratégia de coleta de dados deste projeto foi estruturada de forma híbrida para garantir tanto a segurança quanto a reprodutibilidade técnica:
 1.  **Armazenamento Local (Backup):** Os dados brutos foram extraídos manualmente do portal SIDRA/IBGE (Tabela 8159): [https://sidra.ibge.gov.br/tabela/8159](https://sidra.ibge.gov.br/tabela/8159)  e armazenados no diretório local `BaseDeDados`. Esse procedimento serve como uma backup para a integridade dos dados originais.
@@ -133,14 +134,33 @@ Para realizar uma análise profunda que parte do panorama nacional para as espec
 | :--- | :--- | :--- | :--- | :--- |
 | **Panorama Geral (Macro)** | Identificar tendência e sazonalidade de longo prazo| 2002 – 2022 | Brasil | Número-índice |
 | **Dinâmica de Momentum (EVM)** | Analisar a volatilidade e choques de curto prazo mês a mês| 2002 – 2022 | Brasil | Variação Mensal |
-| **Ciclo Econômico (AVA)** | Observar o crescimento real acumulado, removendo o "ruído" mensal | 2002 – 2022 | Brasil | Acumulada no Ano |
-| **Recorte Regional** | Comparar o desempenho da produção em polos específicos (ex: Sudeste) | 2022 | Sudeste | Número-índice |
-| **Recorte Setorial** | Avaliar como nichos específicos reagem a crises (ex: Bebidas) | 2002 – 2022 | Bebidas | Número-índice |
-| **Janela de Eventos (Zoom)** | Investigar comportamentos atípicos em períodos de alta volatilidade | Jul – Dez/2022 | Brasil | EVM |
+| **Ciclo Econômico (AVA)** | (EVA - Variação Acumulada) Observar o crescimento real acumulado, removendo o "ruído" mensal | 2002 – 2022 | Brasil | Acumulada no Ano |
+| **Recorte Regional** | Comparar o desempenho da produção em polos específicos (ex: Sudeste) | 2022 | Brasil vs. Sudeste vs. SP | Número-índice |
+| **Recorte Setorial** | Avaliar como nichos específicos reagem a crises (ex: Bebidas) | 2002 – 2022 | Máquinas e Equipamentos, Produtos Alimentícios | Número-índice |
+| **Janela de Eventos (Zoom)** | Investigar comportamentos atípicos em períodos de alta volatilidade | Crise 2008, Pandemia 2020, Auge 2012 | Brasil | EVM |
 
 Esta estrutura modular permite verificar se padrões identificados no nível nacional se mantêm ou se alteram em contextos regionais e setoriais específicos.
 
+### 4.3.3 Repositorio e API
+Os dados brutos utilizados no projeto foram organizados para garantir a reprodutibilidade. Os arquivos estão estruturados no diretório BaseDeDados em formato .xlsx e .csv, contendo as séries históricas da PIM-PF (2002-2022).
 
+Para a automação da coleta de dados, foram utilizadas chamadas à API oficial do SIDRA/IBGE. Abaixo, detalhamos os endpoints utilizados para cada dimensão de análise:
+1. Industria geral Bruta
+Arquivo: PIMPF_IndustriaGeral_2002_2022_Brasil.xlsx
+Variavel: /v/11599 PIMPF - Número-índice (2012=100) (Número-índice): 5 de 5 casas decimais
+Panorama Geral (Indústria Geral):
+api_url = "[https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11599/p/all/c544/129314/d/v11599%201](https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11599/p/all/c544/129314/d/v11599%201)"
+
+2. EVM Industria geral Bruta
+Arquivo: PIMPF_IndustriaGeral_EVM_2002_2022_Brasil.xlsx
+Variavel: /v/11601 PIMPF - Variação mês/mês imediatamente anterior, com ajuste sazonal (M/M-1) (%): 1 de 1 casas decimais
+Dinâmica de Momentum (EVM - Variação Mensal):
+api_url = "[https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11601/p/all/c544/129314/d/v11601%201](https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11601/p/all/c544/129314/d/v11601%201)"
+
+3. EVA Industria geral Bruta:
+Arquivo: PIMPF_IndustriaGeral_EVA_2002_2022_Brasil.xlsx
+Variavel: /v/11602 Variação mês/mesmo mês do ano anterior (M/M-12) (% [janeiro 2003 a dezembro 2022]): 1 de 1 casas decimais
+api_url = "[https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11602/p/all/c544/129314/d/v11602%201](https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11602/p/all/c544/129314/d/v11602%201)"
 
 ## 4.4 Pré-processamento
 
