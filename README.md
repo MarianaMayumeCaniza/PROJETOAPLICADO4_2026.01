@@ -132,12 +132,12 @@ A estratégia de coleta de dados deste projeto foi estruturada de forma híbrida
 Para realizar uma análise profunda que parte do panorama nacional para as especificidades setoriais e regionais, foram definidos recortes principais de estudo (subamostras):
 | Dimensão de Análise | Objetivo Técnico | Período | Abrangência | Variável Principal |
 | :--- | :--- | :--- | :--- | :--- |
-| **Panorama Geral (Macro)** | Identificar tendência e sazonalidade de longo prazo| 2002 – 2022 | Brasil | Número-índice |
-| **Dinâmica de Momentum (EVM)** | Analisar a volatilidade e choques de curto prazo mês a mês| 2002 – 2022 | Brasil | Variação Mensal |
-| **Ciclo Econômico (AVA)** | (EVA - Variação Acumulada) Observar o crescimento real acumulado, removendo o "ruído" mensal | 2002 – 2022 | Brasil | Acumulada no Ano |
-| **Recorte Regional** | Comparar o desempenho da produção em polos específicos (ex: Sudeste) | 2022 | Brasil vs. Sudeste vs. SP | Número-índice |
-| **Recorte Setorial** | Avaliar como nichos específicos reagem a crises (ex: Bebidas) | 2002 – 2022 | Máquinas e Equipamentos, Produtos Alimentícios | Número-índice |
-| **Janela de Eventos (Zoom)** | Investigar comportamentos atípicos em períodos de alta volatilidade | Crise 2008, Pandemia 2020, Auge 2012 | Brasil | EVM |
+| **1. Panorama Geral (Macro)** | Identificar tendência e sazonalidade de longo prazo| 2002 – 2022 | Brasil | Número-índice |
+| **2. Dinâmica de Momentum (EVM)** | Analisar a volatilidade e choques de curto prazo mês a mês| 2002 – 2022 | Brasil | Variação Mensal |
+| **3. Ciclo Econômico (AVA)** | (EVA - Variação Acumulada) Observar o crescimento real acumulado, removendo o "ruído" mensal | 2002 – 2022 | Brasil | Acumulada no Ano |
+| **4. Recorte Regional** | Comparar o desempenho da produção em polos específicos (ex: Sudeste) | 2022 | Brasil vs. Sudeste vs. SP | Número-índice |
+| **5. Recorte Setorial** | Avaliar como nichos específicos reagem a crises (ex: Bebidas) | 2002 – 2022 | Máquinas e Equipamentos, Produtos Alimentícios | Número-índice |
+| **6. Janela de Eventos (Zoom)** | Investigar comportamentos atípicos em períodos de alta volatilidade | Crise 2008, Pandemia 2020, Auge 2012 | Brasil | EVM |
 
 Esta estrutura modular permite verificar se padrões identificados no nível nacional se mantêm ou se alteram em contextos regionais e setoriais específicos.
 
@@ -161,6 +161,51 @@ api_url = "[https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11601/p/all/c544
 Arquivo: PIMPF_IndustriaGeral_EVA_2002_2022_Brasil.xlsx
 Variavel: /v/11602 Variação mês/mesmo mês do ano anterior (M/M-12) (% [janeiro 2003 a dezembro 2022]): 1 de 1 casas decimais
 api_url = "[https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11602/p/all/c544/129314/d/v11602%201](https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11602/p/all/c544/129314/d/v11602%201)"
+
+4. Recorte Regional e Estadual
+
+Região Sudeste: n2
+Arquivo: PIMPF_IndustriaGeral_GrandeRegiao_2002_2022.xlsx
+Nível Territorial: `n2/all`
+Variavel: /v/11599 PIMPF - Número-índice (2012=100) (Número-índice): 5 de 5 casas decimais
+api_url = "[https://apisidra.ibge.gov.br/values/t/8159/n2/3/v/11599/p/all/c544/129314/d/v11599%201](https://apisidra.ibge.gov.br/values/t/8159/n2/all/v/11599/p/all/c544/129314/d/v11599%205)"
+
+São Paulo: n3
+Arquivo: PIMPF_IndustriaGeral_UnidadeFederacao_2002_2022.xlsx
+Nível Territorial: `n3/all`
+Variavel: /v/11599 PIMPF - Número-índice (2012=100) (Número-índice): 5 de 5 casas decimais
+api_url = "[https://apisidra.ibge.gov.br/values/t/8159/n3/35/v/11599/p/all/c544/129314/d/v11599%201](https://apisidra.ibge.gov.br/values/t/8159/n3/all/v/11599/p/all/c544/129314/d/v11599%205)"
+
+5. Recorte Setorial
+
+Fabricação de Produtos Alimentícios (3.10): Código 129317
+Arquivo: PIMPF_IndustriaGeral_2002_2022_Brasil_Alimenticia.xlsx
+Classificação: /c544/129317
+Variavel: /v/11599 PIMPF - Número-índice (2012=100) (Número-índice): 5 de 5 casas decimais
+api_url = [https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11599/p/all/c544/129317/d/v11599%205](https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11599/p/all/c544/129317/d/v11599%205)
+
+Fabricação de Máquinas e Equipamentos (3.28): Código 129333
+Arquivo: PIMPF_IndustriaGeral_2002_2022_Brasil_MaquinaeEquipamentos.xlsx
+Classificação: /c544/129333
+Variavel: /v/11599 PIMPF - Número-índice (2012=100) (Número-índice): 5 de 5 casas decimais
+api_url = ["https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11599/p/all/c544/129333/d/v11599%201"](https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11599/p/all/c544/129337/d/v11599%205)
+
+6. Janela de Eventos (Zoom)
+
+Crise 2008 (Ex: 2007 a 2009): /p/200601-201012
+Arquivo: PIMPF_IndustriaGeral_2007_2009_Brasil.xlsx
+Período:  /p/200701-200912
+api_url = "[https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11599/p/all/c544/129333/d/v11599%201](https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11599/p/200701-200912/c544/129314/d/v11599%201)"
+
+Auge 2012: /p/201201-201212
+Arquivo: PIMPF_IndustriaGeral_2012_Brasil.xlsx
+Período:  /p/200701-200912
+api_url: ["https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11601/p/201201-201212/c544/129314/d/v11601%201](https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11601/p/201201-201212/c544/129314/d/v11601%201)
+
+Pandemia 2020: /p/202001-202012
+Arquivo: PIMPF_IndustriaGeral_2020_Brasil.xlsx
+Período:  /p/202001-202012
+api_url = "[https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11601/p/202001-202012/c544/129314/d/v11601%201](https://apisidra.ibge.gov.br/values/t/8159/n1/all/v/11601/p/202001-202012/c544/129314/d/v11601%201)"
 
 ## 4.4 Pré-processamento
 
